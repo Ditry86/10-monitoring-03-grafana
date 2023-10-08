@@ -1,5 +1,5 @@
 variable "zone" {
-    default=""
+    default="ru-central1-a"
 }
 
 output "external_ip_address" {

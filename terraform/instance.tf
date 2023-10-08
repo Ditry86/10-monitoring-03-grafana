@@ -19,6 +19,28 @@ resource "yandex_compute_instance" "vm" {
     nat = true
   }
 
+  allow_stopping_for_update = true
+
+  connection {
+    type     = "ssh"
+    user     = "ditry"
+    private_key = file("~/.ssh/id_ed25519")
+    host = self.network_interface.0.nat_ip_address
+    #host = yandex_compute_instance.vm.network_interface.0.nat_ip_address
+  }
+  
+  provisioner "remote-exec" {
+    inline = [
+	  "sudo mkdir /tmp/prometheus",
+    "sudo chmod a+rw /tmp/prometheus",
+    ]
+  }
+  
+  provisioner "file" {
+    source      = "./prometheus/prometheus.yml"
+    destination = "/tmp/prometheus/prometheus.yml"
+  } 
+
   metadata = {
   docker-compose = file("docker_compose.yml")
   user-data = file("cloud_config.yml")
