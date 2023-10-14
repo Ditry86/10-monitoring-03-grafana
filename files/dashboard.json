@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 1,
-  "iteration": 1697237545759,
+  "iteration": 1697259452941,
   "links": [],
   "panels": [
     {
@@ -42,7 +42,7 @@
             },
             "reducer": {
               "params": [],
-              "type": "avg"
+              "type": "last"
             },
             "type": "query"
           },
@@ -65,7 +65,7 @@
             },
             "reducer": {
               "params": [],
-              "type": "avg"
+              "type": "last"
             },
             "type": "query"
           },
@@ -88,14 +88,14 @@
             },
             "reducer": {
               "params": [],
-              "type": "avg"
+              "type": "last"
             },
             "type": "query"
           }
         ],
         "executionErrorState": "alerting",
-        "for": "1m",
-        "frequency": "1m",
+        "for": "30s",
+        "frequency": "5s",
         "handler": 1,
         "name": "CPU load average alert",
         "noDataState": "no_data",
@@ -726,7 +726,6 @@
         },
         "overrides": []
       },
-      "folderId": null,
       "gridPos": {
         "h": 11,
         "w": 24,
@@ -750,7 +749,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Panel Title",
+      "title": "Alerts list",
       "type": "alertlist"
     }
   ],
@@ -826,8 +825,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "aa9f4c25b086",
-          "value": "aa9f4c25b086"
+          "text": "de36d8f2beb9",
+          "value": "de36d8f2beb9"
         },
         "datasource": null,
         "definition": "label_values(node_uname_info{job=~\"$job\"}, nodename)",
@@ -894,5 +893,5 @@
   "timezone": "",
   "title": "My dashboard",
   "uid": "MLZck1GSk",
-  "version": 6
+  "version": 5
 }
